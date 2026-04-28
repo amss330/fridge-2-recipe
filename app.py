@@ -9,15 +9,16 @@ st.set_page_config(
 st.title("Fridge 2 Recipe 🍳")
 st.markdown(":red[Don't know what to cook? Upload a photo of your fridge and we'll suggest recipes based on what you have!]")
 
-# Add a sidebar
+# The sidebar
 with st.sidebar:
     st.header("Settings")
     max_recipes = st.slider("Max recipes", min_value=1, max_value=10, value=3, step=1)
     diet_preference = st.selectbox("Diet preference", options=["None", "Vegan", "Vegetarian", "Gluten-free", "Paleo", "Keto"])
 
-# Add the file uploader
+# The main layout
 col1, col2 = st.columns(2, gap="large")
 
+# Add the file uploader
 with col1:
     st.subheader("Your Fridge")
     uploaded_file = st.file_uploader(
